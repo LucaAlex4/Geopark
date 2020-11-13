@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <script
+      src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyAIcGAkVqw_Df_IyuXvJJe0m7FVqseXOZA&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways"
+      defer
+    ></script>
+    <style type="text/css">
+      #map {
+        min-height: 100%;
+        width: 100%;
+        position: absolute;
+      }
+      body{
+        margin:0;
+        padding:0;
+      }
+    </style>
+    <script>
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: 55.7230, lng: 12.154 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 15,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="map"></div>
+  </body>
+</html>
